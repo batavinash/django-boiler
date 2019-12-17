@@ -12,18 +12,18 @@ class Command(BaseCommand):
 
         # logic to rename the project
         files_to_rename = [
-            'core/settings/base.py',
-            'core/wsgi.py',
-            'core/asgi.py',
+            'boiler/settings/base.py',
+            'boiler/wsgi.py',
+            'boiler/asgi.py',
             'manage.py'
         ]
-        folder_to_rename = 'core'
+        folder_to_rename = 'boiler'
 
         for f in files_to_rename:
             with open(f, 'r') as file:
                 filedata = file.read()
 
-            filedata = filedata.replace('core', new_project_name)
+            filedata = filedata.replace('boiler', new_project_name)
 
             with open(f, 'w') as file:
                 file.write(filedata)
